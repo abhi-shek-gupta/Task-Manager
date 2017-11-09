@@ -1,0 +1,40 @@
+body{
+    background-color: #eceeef;
+    }
+   input.ng-invalid.ng-touched {
+       border: 2px solid red;
+       
+   }
+   textarea.ng-invalid.ng-touched {
+       border: 2px solid red;
+       
+   }
+   .demo-list-control {
+    width: 300px;
+  }
+  
+  .demo-list-radio {
+    display: inline;
+  }
+
+  #t1,#t1 tr,#t1 th,#t1 td{
+    border:1px solid black;				
+}
+#t1{
+    border-collapse:collapse;
+}
+#t1 thead{
+    color:white;
+    background:#1723D1;
+    font-size: 15px;
+    
+}
+
+#t1>tbody>tr:nth-child(even){
+    color:black;
+    background:#6CC0D4;
+}
+ thead{
+    font-size: 15px;
+    color: white;
+}

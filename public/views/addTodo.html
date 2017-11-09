@@ -1,0 +1,59 @@
+      
+     
+<div style="margin-bottom: 30px"></div>
+<div class="container" >
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3" >
+            <!-- todo  Task list start -->
+        <!-- <li ng-repeat="element in taskArr">{{ element.name }}</li>   -->
+       <h3 ng-if="!taskArr.length">No Task yet! Add one</h3>
+        <table id="t1" class="mdl-data-table mdl-js-data-table" ng-if="taskArr.length">
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th class="mdl-data-table__cell--non-numeric">Task </th>
+                    <th >Stat time</th> 
+                    <th >End time</th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="element in taskArr">
+                     <td> <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+                <input ng-if="element.status == 'pending'" type="checkbox"  class="mdl-checkbox__input"  ng-click="checkTask(element._id)" >
+                <input ng-if="element.status == 'done'" type="checkbox"  class="mdl-checkbox__input"  ng-click="checkTask(element._id)" checked> 
+              </label></td>
+                    <td class="mdl-data-table__cell--non-numeric">{{ element.name }}</td>
+                    <td>{{element.created_date | date:'medium'}}</td>
+                    <td ng-if="element.status == 'done'">{{element.completed_date | date:'medium'}}</td>
+                    <td ng-if="element.status == 'pending'">-</td>
+                </tbody>
+              </table>         <!-- Todo task list end -->
+            <form name="myUserForm" ng-submit="myUserForm.$valid && addTask(body)" novalidate >
+                <div class="form-group" >
+                    <label for="name">Name Of Task</label>
+                    <input id="name" name="name" class="form-control" ng-model="body.name" minlength="3" required>
+                    <span class="help-block text-danger" ng-show="(myUserForm.$submitted|| myUserForm.name.$touched ) && myUserForm.name.$error.required">name is compulsory</span>
+                </div>
+                
+                <button class="btn btn-primary">Add</button>
+            </form>
+          
+            <!-- <pre>
+                {{myUserForm|json}}
+            </pre> -->
+        
+        </div>
+   
+    </div>
+
+   
+           
+            
+
+</div>
+
+           <!-- end -->
+
+           
+
+    
